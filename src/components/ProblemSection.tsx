@@ -1,4 +1,6 @@
 import { ArrowRight } from 'lucide-react';
+import cloudImg from "../images/cloud-computing.webp";
+
 
 export default function MaxTransparency() {
   return (
@@ -79,11 +81,11 @@ export default function MaxTransparency() {
           {/* Right: Image - 4 columns on lg+ */}
           <div className="lg:col-span-4 flex justify-center lg:justify-end">
             <div className="w-full max-w-md lg:max-w-full">
-              <img
-                src="../src/images/cloud-computing.webp"
-                alt="Cloud Computing"
-                className="w-full h-auto rounded-2xl shadow-2xl shadow-indigo-500/20 object-cover"
-              />
+             <img
+  src={cloudImg}
+  alt="Cloud Computing"
+  className="w-full h-auto rounded-2xl shadow-2xl shadow-indigo-500/20 object-cover"
+/>
             </div>
           </div>
         </div>

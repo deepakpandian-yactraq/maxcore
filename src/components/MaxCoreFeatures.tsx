@@ -41,12 +41,17 @@ export default function MaxCoreFeatures() {
           Key Features & Benefits
         </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-          {features.map((item, index) => (
-            <div
-              key={index}
-              className="bg-zinc-900 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 border border-zinc-800"
-            >
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  {features.map((item, index) => {
+    const isLastTwo = index >= features.length - 2;
+
+    return (
+      <div
+        key={index}
+        className={`bg-zinc-900 p-8 rounded-2xl shadow-lg border border-zinc-800
+        ${features.length % 3 === 2 && isLastTwo ? "lg:col-span-3 md:col-span-2" : ""}
+        `}
+      >
               <div className="mb-4">
                 <span className="text-sm uppercase tracking-wide text-gray-400">
                   {item.type}

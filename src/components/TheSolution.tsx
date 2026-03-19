@@ -61,8 +61,7 @@ export default function TheSolution() {
 
   {/* Demo Video */}
   <a
-    href="#" 
-    target="_blank"
+    href="#pricingComparison" 
     rel="noopener noreferrer"
     className="
       inline-flex items-center gap-3 px-10 py-5 text-xl font-medium
@@ -72,7 +71,7 @@ export default function TheSolution() {
       rounded-xl transition-all duration-300
     "
   >
-    See How It Works →
+    See Real-Time Rates →
   </a>
 
 </div>

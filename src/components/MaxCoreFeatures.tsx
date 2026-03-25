@@ -29,7 +29,7 @@ const features = [
     title: "Max Transparency",
     type: "Benefit",
     description:
-      "No hidden networking fees or surprise add-ons. You see exactly what you pay for by the hour.",
+      "No hidden networking fees or surprise add-ons. You see exactly what you pay for by the hour.Pure compute, pure visibility.",
   },
 ];
 

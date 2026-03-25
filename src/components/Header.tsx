@@ -42,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({ onScheduleDemo }) => {
         <nav className="hidden md:flex items-center space-x-8">
            <a href="#" className="text-light-200/90 font-semibold hover:text-primary transition-colors glow-sm hover:glow-md">Home</a>
         <a href="#features" className="text-light-200/90 font-semibold hover:text-primary transition-colors glow-sm hover:glow-md">Features</a>
-        <a href="#howItWorks" className="text-light-200/90 font-semibold hover:text-primary transition-colors glow-sm hover:glow-md">How it Works</a>
+        <a href="#pricingComparison" className="text-light-200/90 font-semibold hover:text-primary transition-colors glow-sm hover:glow-md">Pricing</a>
           <button
             onClick={onScheduleDemo}
             className="group relative px-6 py-2.5 rounded-lg transition-all duration-300 text-sm overflow-hidden"

@@ -80,8 +80,7 @@ const PricingComparison: React.FC = () => {
             See the Real Savings
           </h2>
           <p className="text-light-200/70 font-semibold max-w-4xl mx-auto glow-sm">
-            Compare actual hyperscaler prices vs. DePIN networks aggregated
-            through DePINtelligence
+            Maxcore vs. Hyperscalers: Huge savings on these 4 heavy hitters, with 20+ other configurations ready to deploy.
           </p>
         </div>
 

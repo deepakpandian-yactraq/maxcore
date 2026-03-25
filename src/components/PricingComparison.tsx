@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 interface PricingRow {
   gpu: string;
@@ -7,6 +7,15 @@ interface PricingRow {
   azure: string;
   depin: string;
   savings: string;
+}
+
+interface ApiGPU {
+  vendor: string;
+  model: string;
+  ram: string;
+  interface: string;
+  price: number;
+  currency: string;
 }
 
 const pricingData: PricingRow[] = [
@@ -45,17 +54,27 @@ const pricingData: PricingRow[] = [
 ];
 
 const PricingComparison: React.FC = () => {
+  const [gpuData, setGpuData] = useState<ApiGPU[]>([]);
+
+  useEffect(() => {
+    fetch("https://console.maxcore.cloud/v1/gpus")
+      .then((res) => res.json())
+      .then((data) => setGpuData(data))
+      .catch((err) => console.error("API Error:", err));
+  }, []);
+
   return (
     <section
       id="pricingComparison"
       className="py-24 px-4 relative overflow-hidden"
     >
-      {/* Background Effects */}
+      {/* Background */}
       <div className="absolute inset-0 bg-gradient-radial from-primary/10 via-dark to-dark"></div>
       <div className="absolute inset-0 bg-circuit bg-repeat opacity-5"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header */}
+        
+        {/* HEADER */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 glow-lg">
             See the Real Savings
@@ -66,57 +85,38 @@ const PricingComparison: React.FC = () => {
           </p>
         </div>
 
-        {/* Table */}
-        <div className="relative bg-dark-100/50 backdrop-blur-xl rounded-xl border border-primary/20 overflow-hidden">
+        {/* OLD TABLE (UNCHANGED) */}
+        <div className="relative bg-dark-100/50 backdrop-blur-xl rounded-xl border border-primary/20 overflow-hidden mb-16">
           <div className="absolute -inset-[1px] bg-gradient-to-r from-primary/30 via-secondary/30 to-primary/30 rounded-xl opacity-20 blur"></div>
 
           <div className="relative z-10 overflow-x-auto">
             <table className="w-full">
               <thead>
                 <tr className="border-b border-primary/20">
-                  <th className="py-4 px-6 text-center font-bold text-light-200">
-                    GPU Model
+                  <th className="py-4 px-6 text-center">GPU Model</th>
+                  <th className="py-4 px-6 text-center">AWS</th>
+                  <th className="py-4 px-6 text-center">Google Cloud</th>
+                  <th className="py-4 px-6 text-center">Microsoft Azure</th>
+                  <th className="py-4 px-6 text-center text-white">
+                    DePINtelligence
                   </th>
-                  <th className="py-4 px-6 text-center font-bold text-light-200">
-                    AWS
-                  </th>
-                  <th className="py-4 px-6 text-center font-bold text-light-200">
-                    Google Cloud
-                  </th>
-                  <th className="py-4 px-6 text-center font-bold text-light-200">
-                    Microsoft Azure
-                  </th>
-                  <th className="py-4 px-6 text-center font-bold text-white">
-                    DePINtelligence (Avg DePIN)
-                  </th>
-                  <th className="py-4 px-6 text-center font-bold text-secondary">
+                  <th className="py-4 px-6 text-center text-secondary">
                     Savings
                   </th>
                 </tr>
               </thead>
 
               <tbody>
-                {pricingData.map((item: PricingRow, index: number) => (
-                  <tr
-                    key={index}
-                    className="border-b border-primary/10 hover:bg-primary/5 transition-colors duration-300"
-                  >
-                    <td className="py-4 px-6 text-center font-bold text-light-200">
-                      {item.gpu}
-                    </td>
-                    <td className="py-4 px-6 text-center font-semibold text-light-200/80">
-                      {item.aws}
-                    </td>
-                    <td className="py-4 px-6 text-center font-semibold text-light-200/80">
-                      {item.gcp}
-                    </td>
-                    <td className="py-4 px-6 text-center font-semibold text-light-200/80">
-                      {item.azure}
-                    </td>
-                    <td className="py-4 px-6 text-center font-bold text-white">
+                {pricingData.map((item, index) => (
+                  <tr key={index} className="border-b border-primary/10">
+                    <td className="py-4 px-6 text-center">{item.gpu}</td>
+                    <td className="py-4 px-6 text-center">{item.aws}</td>
+                    <td className="py-4 px-6 text-center">{item.gcp}</td>
+                    <td className="py-4 px-6 text-center">{item.azure}</td>
+                    <td className="py-4 px-6 text-center text-white">
                       {item.depin}
                     </td>
-                    <td className="py-4 px-6 text-center font-bold text-secondary">
+                    <td className="py-4 px-6 text-center text-secondary">
                       {item.savings}
                     </td>
                   </tr>
@@ -125,6 +125,53 @@ const PricingComparison: React.FC = () => {
             </table>
           </div>
         </div>
+
+        {/* NEW TABLE FROM API */}
+        <div className="relative bg-dark-100/50 backdrop-blur-xl rounded-xl border border-secondary/20 overflow-hidden">
+          <div className="absolute -inset-[1px] bg-gradient-to-r from-secondary/30 via-primary/30 to-secondary/30 rounded-xl opacity-20 blur"></div>
+
+          <div className="relative z-10 overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b border-secondary/20">
+                  <th className="py-4 px-6 text-center">Model</th>
+                  <th className="py-4 px-6 text-center">Vendor</th>
+                  <th className="py-4 px-6 text-center">RAM</th>
+                  <th className="py-4 px-6 text-center">Interface</th>
+                  <th className="py-4 px-6 text-center text-white">
+                    Price / Hour
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {gpuData.map((gpu, index) => (
+                  <tr
+                    key={index}
+                    className="border-b border-secondary/10 hover:bg-secondary/5 transition"
+                  >
+                    <td className="py-4 px-6 text-center font-semibold">
+                      {gpu.model}
+                    </td>
+                    <td className="py-4 px-6 text-center">
+                      {gpu.vendor}
+                    </td>
+                    <td className="py-4 px-6 text-center">
+                      {gpu.ram}
+                    </td>
+                    <td className="py-4 px-6 text-center">
+                      {gpu.interface}
+                    </td>
+                    <td className="py-4 px-6 text-center text-white font-bold">
+                      ${gpu.price}/hour
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
       </div>
     </section>
   );

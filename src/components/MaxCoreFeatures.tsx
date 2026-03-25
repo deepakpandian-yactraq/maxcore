@@ -23,7 +23,7 @@ const features = [
     title: "Max Reliability",
     type: "Feature",
     description:
-      "A decentralized network of hundreds of Tier-3 and Tier-4 data centers managed by our proprietary Self-Healing Engine.",
+      "A decentralized network of hundreds of data centers managed by our proprietary Self-Healing Engine.  If a resource fails, MaxCore automatically detects the issue and migrates your workload in seconds: ensuring uptime isn't just a promise, but a mathematical certainty",
   },
   {
     title: "Max Transparency",

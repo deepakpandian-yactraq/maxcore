@@ -118,7 +118,7 @@ const PricingComparison: React.FC = () => {
                   <th className="py-4 px-6 text-center">Google Cloud</th>
                   <th className="py-4 px-6 text-center">Microsoft Azure</th>
                   <th className="py-4 px-6 text-center text-white">
-                    DePINtelligence
+                    MaxCore Cloud
                   </th>
                   <th className="py-4 px-6 text-center text-secondary">
                     Savings

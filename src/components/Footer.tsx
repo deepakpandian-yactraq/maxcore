@@ -18,7 +18,6 @@ const Footer: React.FC = () => {
           <div className="flex gap-8">
             <a href="#" className="text-light-200/90 font-semibold hover:text-primary transition-colors glow-sm hover:glow-md">Home</a>
            <a href="#features" className="text-light-200/90 font-semibold hover:text-primary transition-colors glow-sm hover:glow-md">Features</a>
-            <a href="#howItWorks" className="text-light-200/90 font-semibold hover:text-primary transition-colors glow-sm hover:glow-md">How it Works</a>
             <a href="#contact" className="text-light-200/90 font-semibold hover:text-primary transition-colors glow-sm hover:glow-md">Contact</a>
           </div>
         </div>

@@ -18,25 +18,25 @@ interface ApiGPU {
 
 const pricingData: PricingRow[] = [
   {
-    gpu: "H100",
-    aws: "$7.50/hour",
-    gcp: "$11.06/hour",
-    azure: "$6.98/hour",
-  },
-  {
-    gpu: "A100",
+    gpu: "A100 80GB",
     aws: "$6.25/hour",
     gcp: "$6.25/hour",
     azure: "$4.46/hour",
   },
   {
-    gpu: "V100",
+    gpu: "H100 80GB",
+    aws: "$7.50/hour",
+    gcp: "$11.06/hour",
+    azure: "$6.98/hour",
+  },
+  {
+    gpu: "H200 141GB",
     aws: "$2.48/hour",
     gcp: "$2.73/hour",
     azure: "$2.89/hour",
   },
   {
-    gpu: "RTX 4090",
+    gpu: "RTX 5090 32GB",
     aws: "$1.89/hour",
     gcp: "$2.15/hour",
     azure: "$2.28/hour",
@@ -65,10 +65,11 @@ const PricingComparison: React.FC = () => {
     return gpuData.find((gpu) => {
       const model = gpu.model.toLowerCase();
 
-      if (name.includes("h100") && model.includes("h100")) return true;
+
       if (name.includes("a100") && model.includes("a100")) return true;
-      if (name.includes("v100") && model.includes("v100")) return true;
-      if (name.includes("4090") && model.includes("4090")) return true;
+      if (name.includes("h100") && model.includes("h100")) return true;
+      if (name.includes("h200") && model.includes("h200")) return true;
+      if (name.includes("5090") && model.includes("5090")) return true;
 
       return false;
     })?.price;

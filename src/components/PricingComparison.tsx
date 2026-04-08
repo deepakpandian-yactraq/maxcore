@@ -31,9 +31,9 @@ const pricingData: PricingRow[] = [
   },
   {
     gpu: "H200 141GB",
-    aws: "$2.48/hour",
-    gcp: "$2.73/hour",
-    azure: "$2.89/hour",
+    aws: "$10.60/hour",
+    gcp: "$10.85/hour",
+    azure: "$10.60/hour",
   },
   {
     gpu: "RTX 5090 32GB",

@@ -54,9 +54,6 @@ export default function MaxCoreFeatures() {
               className="bg-zinc-900 p-8 rounded-2xl shadow-lg border border-zinc-800"
             >
               <div className="mb-4">
-                <span className="text-sm uppercase tracking-wide text-gray-400">
-                  {item.type}
-                </span>
                 <h3 className="text-2xl font-semibold mt-2">
                   {item.title}
                 </h3>
@@ -75,9 +72,6 @@ export default function MaxCoreFeatures() {
                 className="bg-zinc-900 p-8 rounded-2xl shadow-lg border border-zinc-800"
               >
                 <div className="mb-4">
-                  <span className="text-sm uppercase tracking-wide text-gray-400">
-                    {item.type}
-                  </span>
                   <h3 className="text-2xl font-semibold mt-2">
                     {item.title}
                   </h3>

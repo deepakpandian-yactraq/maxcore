@@ -6,7 +6,7 @@ export const landingPageContent = {
         titlePart1: "Maximize Your Compute.",
         titlePart2: "Minimize the Cloud Tax."
       },
-      subheading: "Sub-headline: MaxCore Cloud aggregates the global market to find you the lowest hourly rates, slashing total costs by upto 85%. Experience Max Efficiency with available GPU acceleration tools and a developer-friendly workflow that solves hyperscaler cost and Neocloud complexity.",
+      subheading: "MaxCore Cloud aggregates the global market to find you the lowest hourly rates, slashing total costs by upto 85%. Experience Max Efficiency with available GPU acceleration tools and a developer-friendly workflow that solves hyperscaler cost and Neocloud complexity.",
     },
     valueProposition: {
         leftCol: {

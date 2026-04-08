@@ -57,10 +57,10 @@ export const landingPageContent = {
     },
     contact: {
         header: "Contact Us",
-        subtitle: "Ready to see DePINtelligence in action? Fill out the form below and our team will get back to you within 24 hours.",
+        subtitle: "Ready to see MaxCore in action? Fill out the form below and our team will get back to you within 24 hours.",
         formSubmitted: {
             header: "Request Received!",
-            subtitle: "Thank you for your interest in DePINtelligence. Our team will contact you shortly to schedule your personalized demo."
+            subtitle: "Thank you for your interest in MaxCore. Our team will contact you shortly to schedule your personalized demo."
         },
         formErrorMessage: 'Form cannot be submitted',
         formLabels: {

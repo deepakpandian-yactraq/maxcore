@@ -19,18 +19,18 @@ export default function TheSolution() {
         </h2>
 
         {/* Supporting headline */}
-        <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-8 md:mb-10 max-w-4xl mx-auto leading-relaxed">
-          MaxCore Cloud isn't just another provider — it's a <span className="text-white font-bold">productivity engine</span>.
+        <p className="text-xl sm:text-2xl md:text-2xl font-normal text-white mb-8 md:mb-10 max-w-4xl mx-auto leading-relaxed">
+          MaxCore Cloud isn't just another provider — it's a productivity engine.
         </p>
 
         {/* Core content */}
-        <div className="space-y-6 text-lg sm:text-xl md:text-2xl text-white leading-relaxed max-w-4xl mx-auto">
+        <div className="space-y-6 text-xl sm:text-2xl md:text-2xl font-normal text-white leading-relaxed max-w-4xl mx-auto">
           <p>
-            We pull from a <span className="font-semibold text-white">global network</span> to deliver the <span className="text-white font-bold">most cost-effective compute by the hour</span>,
+            We pull from a global network to deliver the most cost-effective compute by the hour,
           </p>
 
           <p>
-            then we <span className="italic underline decoration-white decoration-2 underline-offset-4">optimize it</span>.
+            then we optimize it.
           </p>
 
           <p className="pt-4">

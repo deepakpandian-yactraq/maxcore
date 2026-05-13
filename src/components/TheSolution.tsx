@@ -11,10 +11,10 @@ export default function TheSolution() {
 
         {/* Main headline */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6 md:mb-8">
-          The Ultimate
+          More than just a
           <br className="hidden sm:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500">
-            Cloud Aggregator
+            cloud aggregator
           </span>
         </h2>
 
